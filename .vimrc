@@ -111,3 +111,11 @@ let g:rainbow_active = 1
 " open terminal below all splits
 " on startup, :bterm is command
 cabbrev bterm bo term
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
