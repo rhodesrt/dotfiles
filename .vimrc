@@ -21,9 +21,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'preservim/nerdtree'
+
 Plugin 'ctrlp.vim'
 
-Plugin 'frazrepo/vim-rainbow'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,14 +49,6 @@ set shortmess+=I
 " Show line numbers.
 set number
 
-" This enables relative line numbering mode. With both number and
-" relativenumber enabled, the current line shows the true line number, while
-" all other lines (above and below) are numbered relative to the current line.
-" This is useful because you can tell, at a glance, what count is needed to
-" jump up or down to a particular line, by {count}k to go up or {count}j to go
-" down.
-set relativenumber
-
 " Always show the status line at the bottom, even if you only have one window open.
 set laststatus=2
 
@@ -66,7 +59,7 @@ set laststatus=2
 set backspace=indent,eol,start
 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
-" shown in any window) that has unsaved changes. This is to prevent you from "
+" shown in any window) that has unsaved changes. This is to prevent you from 
 " forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
 " hidden buffers helpful enough to disable this protection. See `:help hidden`
 " for more information on this.
@@ -106,16 +99,3 @@ inoremap <Down>  <ESC>:echoe "Use j"<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-let g:rainbow_active = 1
-
-" open terminal below all splits
-" on startup, :bterm is command
-cabbrev bterm bo term
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
